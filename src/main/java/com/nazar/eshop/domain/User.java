@@ -14,6 +14,8 @@ public class User extends NamedEntity {
 	
 	private LocalDate birth;
 	
+	private String role;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -34,6 +36,14 @@ public class User extends NamedEntity {
 	
 	public void setBirth(LocalDate birth) {
 		this.birth = birth;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	@Override
