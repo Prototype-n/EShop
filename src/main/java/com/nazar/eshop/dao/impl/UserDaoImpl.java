@@ -1,46 +1,25 @@
 package com.nazar.eshop.dao.impl;
 
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
 import com.nazar.eshop.dao.UserDao;
 import com.nazar.eshop.domain.User;
 
-public class UserDaoImpl implements UserDao {
+@Repository
+public class UserDaoImpl extends HasNameDaoImpl<User> implements UserDao {
 
-	@Override
-	public void create(User t) {
-		// TODO Auto-generated method stub
-		
+	public UserDaoImpl(Class<User> clazz) {
+		super(clazz);
 	}
 
-	@Override
-	public void remove(User t) {
-		// TODO Auto-generated method stub
-		
+	public UserDaoImpl() {
+		this(User.class);
 	}
-
-	@Override
-	public List<User> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public User getById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<User> getListByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public User getUserByEmail(String email) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+		
 }

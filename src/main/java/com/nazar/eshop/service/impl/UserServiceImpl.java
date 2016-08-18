@@ -3,12 +3,13 @@ package com.nazar.eshop.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.nazar.eshop.dao.UserDao;
 import com.nazar.eshop.domain.User;
 import com.nazar.eshop.service.UserService;
 
-
+@Service
 public class UserServiceImpl  implements UserService {
 	
 	@Autowired

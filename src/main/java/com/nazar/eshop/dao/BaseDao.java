@@ -2,13 +2,17 @@ package com.nazar.eshop.dao;
 
 import java.util.List;
 
-public interface BaseDao<T> {
-	
-	public void create(T t);
+import com.nazar.eshop.domain.BaseEntity;
 
-	public void remove(T t);
-
-	public List<T> getAll();
+public interface BaseDao<T extends BaseEntity> {
 	
-	public T getById(Integer id);
+	void create(T t);
+
+	void remove(T t);
+	
+	void update(T t);
+
+	List<T> getAll();
+	
+	T getById(Integer id);
 }
