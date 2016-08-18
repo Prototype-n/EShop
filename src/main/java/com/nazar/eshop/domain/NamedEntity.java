@@ -1,5 +1,8 @@
 package com.nazar.eshop.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public abstract class NamedEntity extends BaseEntity {
 	protected String name;
 

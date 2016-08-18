@@ -2,8 +2,8 @@ package com.nazar.eshop.dao;
 
 import com.nazar.eshop.domain.User;
 
-public interface UserDao extends BaseDao<User>, HasNameDao<User> {
+public interface UserDao extends HasNameDao<User> {
 		
-	public User getUserByEmail(String email);
+	User getUserByEmail(String email);
 	
 }

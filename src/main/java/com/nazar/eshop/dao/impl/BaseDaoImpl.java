@@ -1,0 +1,54 @@
+package com.nazar.eshop.dao.impl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.nazar.eshop.dao.BaseDao;
+import com.nazar.eshop.domain.BaseEntity;
+
+public abstract class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
+
+	protected Class<T> clazz;
+	
+	@PersistenceContext
+	protected EntityManager em;
+
+	public BaseDaoImpl(Class<T> clazz) {
+		this.clazz = clazz;
+	}
+	
+	@Override
+	@Transactional
+	public void create(T entity) {
+		em.persist(entity);
+	}
+
+	@Override
+	@Transactional
+	public void remove(T entity) {
+		em.remove(entity);
+	}
+	
+	@Override
+	@Transactional
+	public void update(T entity) {
+		em.merge(entity);
+	}
+
+	@Override
+	public List<T> getAll() {
+		CriteriaQuery<T> cq = em.getCriteriaBuilder().createQuery(clazz);
+        cq.select(cq.from(clazz));
+        return em.createQuery(cq).getResultList();
+	}
+
+	@Override
+	public T getById(Integer id) {
+		return em.find(clazz, id);
+	}
+}
