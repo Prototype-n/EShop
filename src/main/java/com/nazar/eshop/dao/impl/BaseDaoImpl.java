@@ -23,13 +23,15 @@ public abstract class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
 	}
 	
 	@Override
-	@Transactional
 	public void create(T entity) {
+		
+		System.out.println("em = " + em);
+		
 		em.persist(entity);
 	}
 
 	@Override
-	@Transactional
+
 	public void remove(T entity) {
 		em.remove(entity);
 	}

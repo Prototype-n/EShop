@@ -16,6 +16,8 @@ public class ExceptionController {
 		mav.addObject("name", e.getClass().getSimpleName());
 		mav.addObject("message", e.getMessage());
 		
+		System.err.println(e.getClass().getSimpleName() + ": " + e.getMessage());
+		
 		return mav;
 	}
 }

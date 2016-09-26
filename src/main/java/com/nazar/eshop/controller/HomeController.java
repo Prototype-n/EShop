@@ -21,17 +21,17 @@ public class HomeController {
 	@RequestMapping(value = { "/", "/home" })
 	public ModelAndView getHomePage(HttpServletRequest request) {
 		
-//		User user = new User();
-//		user.setName("nazar");
-//		user.setRole("admin");
-//		user.setEmail("nazar@mail");
-//		user.setBirth(LocalDate.now().withYear(1986));
-//		
-//		System.out.println(user.getEmail());
-//		userService.create(user);
+		User user = new User();
+		user.setName("nazar");
+		user.setRole("admin");
+		user.setEmail("nazar@mail");
+		user.setBirth(LocalDate.now().withYear(1986));
 		
-		System.out.println("users");
-		System.out.println(userService.getAll());
+		System.out.println(user.getEmail());
+		userService.create(user);
+		
+//		System.out.println("users");
+//		System.out.println(userService.getAll());
 		
 		
 		ModelAndView mav = new ModelAndView("home");

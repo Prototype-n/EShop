@@ -1,9 +1,12 @@
 package com.nazar.eshop.domain;
 
-import javax.persistence.Entity;
 
-@Entity
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class NamedEntity extends BaseEntity {
+	@Column
 	protected String name;
 
 	public String getName() {
